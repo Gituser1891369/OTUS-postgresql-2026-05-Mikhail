@@ -95,7 +95,7 @@ vi /usr/lib/systemd/system/postgresql-18.service
 Environment=PGDATA=/data_new/18/
 systemctl daemon-reload
 
-![Скриншот 8](Check_2026-06-09_124110.png)
+![Скриншот 8](Datadir_2026-06-09_124110.png)
 
 # 13 - 14  Запуск кластера. Проверка.
   
