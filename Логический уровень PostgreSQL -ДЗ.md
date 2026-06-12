@@ -24,9 +24,9 @@ ____________________________
 # 2. Создайте схему testnm, таблицу t1(c1 int) и вставьте строку;
 
 Команды:
-create database testdb;
-create table t1 (c1 int);
-insert into t1 (c1) values (1);
+- create database testdb;
+- create table t1 (c1 int);
+- insert into t1 (c1) values (1);
 
 ![Скриншот 2](Create_db_create_table.png)
 
