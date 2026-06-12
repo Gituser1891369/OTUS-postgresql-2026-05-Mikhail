@@ -33,20 +33,20 @@ ____________________________
 # 3. Создайте роль readonly, выдайте ей CONNECT к testdb, USAGE на testnm, SELECT на таблицы схемы testnm;
 
 Команды:
-create role readonly;
-alter role readonly with login;
-grant connect on database testdb to readonly;
-grant usage on schema testnm to readonly;
-grant select on all tables in schema testnm to readonly;
+ - create role readonly;
+- alter role readonly with login;
+- grant connect on database testdb to readonly;
+- grant usage on schema testnm to readonly;
+- grant select on all tables in schema testnm to readonly;
 
 ![Скриншот 3](Crteate_role.png)
 
 # 4. Создайте пользователя testread/test123, назначьте роль readonly, выполните select * from t1; и зафиксируйте результат;
 
 Команды:
-create user testread with password 'test123';
-grant readonly to testread;
-select * from t1;
+- create user testread with password 'test123';
+- grant readonly to testread;
+- select * from t1;
 
 ![Скриншот 3](create_role_testread.png)
 
@@ -54,9 +54,9 @@ select * from t1;
 # 5. Пересоздайте таблицу как testnm.t1, проверьте select * from testnm.t1; и настройте поведение, чтобы обращение к t1 было предсказуемым;
 
 Команды:
-create table testnm.t1 (c1 int);
-insert into testnm.t1 (c1) values (1), (2), (3), (4);
-select * from testnm.t1;
+- create table testnm.t1 (c1 int);
+- insert into testnm.t1 (c1) values (1), (2), (3), (4);
+- select * from testnm.t1;
 
 ![Скриншот 4](Create_table_testnm.png)
 
@@ -64,18 +64,16 @@ select * from testnm.t1;
 # 6. Под testread проверьте попытку create table и insert; при необходимости запретите и подтвердите запрет повторной проверкой.
 
 Команды:
-set role testread;
-select current_user;
-create table testread_role_table (id int);
+- set role testread;
+- select current_user;
+- create table testread_role_table (id int);
 
 ![Скриншот 5](Create_table_testread.png)
 
-set role testread;
-select current_user;
-insert into testnm.t1 (c1) values (5);
+ - set role testread;
+ - select current_user;
+ - insert into testnm.t1 (c1) values (5);
 
 ![Скриншот 6](Insert_testnm.png)
-
-
 
 # PS:  не совсем понял вот эту часть  задания (при необходимости запретите и подтвердите запрет повторной проверкой.)  Зачем прописывать revoke  если прав на вставку и создание нет. Об этом видно на скрине Permission Denied Или это просто опечатка? И нужно наоборот выдать грант на создание и проверить, что создалось?
