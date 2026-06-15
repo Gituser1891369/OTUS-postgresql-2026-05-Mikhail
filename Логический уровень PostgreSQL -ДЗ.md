@@ -50,6 +50,16 @@ ____________________________
 
 ![Скриншот 3](create_role_testread.png)
 
+Доработка:
+
+Команды:
+- grant readonly to testread;
+- grant select on t1 to readonly;
+- grant usage on schema public to readonly;
+
+  ![Скриншот 7](grants_testread.png)
+  ![Скриншот 8](Grant_readonly.png)
+  ![Скриншот 9](Check_select_testread.png)
 
 # 5. Пересоздайте таблицу как testnm.t1, проверьте select * from testnm.t1; и настройте поведение, чтобы обращение к t1 было предсказуемым;
 
