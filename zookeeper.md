@@ -37,18 +37,18 @@ https://ubuntu.com/download/server
 # 5. Обновление и установка дополнительного ПО.
 
 - Команды:
--sudo apt update
--sudo apt upgrade
--sudo apt install openssh-server -y
--sudo systemctl start ssh.service
--sudo systemctl enable ssh.service
--sudo systemctl status ssh.service
+- sudo apt update
+- sudo apt upgrade
+- sudo apt install openssh-server -y
+- sudo systemctl start ssh.service
+- sudo systemctl enable ssh.service
+- sudo systemctl status ssh.service
 
 ![Скриншот 5](ssh.jpg)
 
 # 6. Скачиваем и устанавливаем внешнего клиента для удобства работы Moba Extern (Или любой дрйгоу клиент по желанию)
 
--Ресурсы
+- Ресурсы
 https://mobaxterm.mobatek.net/download.html
 
 ![Скриншот 6](moba_download.png)
@@ -61,10 +61,11 @@ https://mobaxterm.mobatek.net/download.html
 # 7. Подготовка SSH ключа и проброс:
 
 - Команды:
--ssh-keygen
--C:\Users\AMAYA/.ssh/id_ed25519
+- ssh-keygen
+- C:\Users\AMAYA/.ssh/id_ed25519
 Пробрасваем ключ через Power Shell
--type C:\Users\AMAYA\.ssh\id_rsa.pub | ssh admin@192.168.0.104 "cat >> ~/.ssh/authorized_keys"
+- type C:\Users\AMAYA\.ssh\id_rsa.pub | ssh admin@192.168.0.104 "cat >> ~/.ssh/authorized_keys"
+
 ![Скриншот 8](ssh.jpg)
 
 
@@ -72,7 +73,7 @@ https://mobaxterm.mobatek.net/download.html
 ### Установка Zookeeper
 
 # 1. Установка необходимых компонентов и пакетов
--Ресурсы:
+- Ресурсы:
 https://zookeeper.apache.org/releases
 
 - Скачиваем дистрибутив 
@@ -81,7 +82,7 @@ apache-zookeeper-3.9.5-bin.tar.gz
 Потребуется установить пакет java  так как zookeeper работает на пакетах java  и просто не запустится.
 
 - Команды
-sudo apt install default-jre certificates netcat-openbsd
+- sudo apt install default-jre certificates netcat-openbsd
 
 
 ![Скриншот 10](install_java.png)
@@ -92,19 +93,16 @@ sudo apt install default-jre certificates netcat-openbsd
 Разархивируем дистрибутив :
 
 Команда:
--tar -xzf apache-zookeeper-3.9.5-bin.tar.gz -C /opt/zookeeper/ --strip-components=1
+- tar -xzf apache-zookeeper-3.9.5-bin.tar.gz -C /opt/zookeeper/ --strip-components=1
 
 ![Скриншот 12](tar_gz.png)
 
 
 Проверяем установку пакетов Java
--Команды 
--java --version
-
-
+- Команды 
+- java --version
 
 ![Скриншот 13](java_version.png)
-
 
 # 2. Необходимые права и каталоги
 
@@ -120,31 +118,32 @@ sudo apt install default-jre certificates netcat-openbsd
 Команды:
 - touch /opt/zookeeper/conf/zoo.cfg
 - useradd -r c 'zookeeper service' zookeeper
+
 ![Скриншот 14](touch_zoo_cfg.png)
 
 
 # 3. Настройка конфигов
 - Команды
 В созданный файл конфига добавляем параметры ниже
-vi /opt/zookeeper/conf/zoo.cfg
+- vi /opt/zookeeper/conf/zoo.cfg
 
-tickTime = 2000
-maxSessionTimeout = 50000
-syncLimit = 5
-initLimit = 300
-autopurge.purgeInterval = 1
-autopurge.snapRetainCount = 5
-snapCount = 200000
-clientPort = 2181
-maxClientCnxns = 500
-4lw.commands.whitelist = stat
-dataDir = /opt/zookeeper/data
-dataLogDir = /var/log/zookeeper
-dynamicConfigFile = /opt/zookeeper/conf/zoo.cfg.dynamic
-#metricsProvider.className=org.apache.zookeeper.metrics.prometheus.PrometheusMetricsProvider
-#metricsProvider.httpHost=0.0.0.0
-#metricsProvider.httpPort=7000
-#metricsProvider.exportJvmInfo=true
+- tickTime = 2000
+- maxSessionTimeout = 50000
+- syncLimit = 5
+- initLimit = 300
+- autopurge.purgeInterval = 1
+- autopurge.snapRetainCount = 5
+- snapCount = 200000
+- clientPort = 2181
+- maxClientCnxns = 500
+- 4lw.commands.whitelist = stat
+- dataDir = /opt/zookeeper/data
+- dataLogDir = /var/log/zookeeper
+- dynamicConfigFile = /opt/zookeeper/conf/zoo.cfg.dynamic
+- #metricsProvider.className=org.apache.zookeeper.metrics.prometheus.PrometheusMetricsProvider
+- #metricsProvider.httpHost=0.0.0.0
+- #metricsProvider.httpPort=7000
+- #metricsProvider.exportJvmInfo=true
 
 ![Скриншот 16](zoo_conf_file.png) 
 
@@ -167,25 +166,25 @@ dataLogDir — путь, по которому zookeeper будет хранит
 
 # 4. Настройка сервисов
 - Команды
--vi /usr/lib/systemd/system/zookeeper.service
+- vi /usr/lib/systemd/system/zookeeper.service
 
 ![Скриншот 17](zoo_service.png)
 
 # 5. Запускаем сервис и проверяем статус
 
 - Команды
-sudo systemctl daemon-reload
-sudo systemctl status zookeeper
-sudo systemctl enable zookeeper.service
-sudo systemctl start zookeeper.service
-sudo systemctl status zookeeper
+- sudo systemctl daemon-reload
+- sudo systemctl status zookeeper
+- sudo systemctl enable zookeeper.service
+- sudo systemctl start zookeeper.service
+- sudo systemctl status zookeeper
 
 ![Скриншот 18](zoo_cfg.png)
 
 # 6. Проверка статуса кластера и количество серверов в кластере:
 
 Статус сервера в кластере проверка через команду:
--/opt/zookeeper/bin/zkServer.sh status
+- /opt/zookeeper/bin/zkServer.sh status
 
 Проверка запросом-командой
 - for h in 192.168.0.110 192.168.0.102 192.168.0.112; do echo -n "$h: "; echo stat | nc $h 2181 2>/dev/null | grep Mode || echo "unreachable"; done
@@ -196,9 +195,12 @@ sudo systemctl status zookeeper
 # 7. Проверка переключения
 
 - Команды
-systemctl restart zookeeper.service  (На текущем лидере)
-Видим переключение лидера в кластере.
+- systemctl restart zookeeper.service  (На текущем лидере перезагрузка сервера отключение, рестарт службы, приведут к переключению сервера лидера в кластере)
+- Видим переключение лидера в кластере.
 ![Скриншот 20](old_leader.png)
 
 ![Скриншот 21](new_leader.png)
+
+# 8. Команды проверки кластера и утилиты:
+
 
