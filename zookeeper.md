@@ -110,14 +110,12 @@ sudo apt install default-jre certificates netcat-openbsd
 
 /opt/zookeeper  /var/log/zookeeper  /opt/zookeeper/data
 
-zoo.cfg
-
 
 - Команды
 -mkdir -p /opt/zookeeper  /var/log/zookeeper  /opt/zookeeper/data
 -chown -R zookeeper:zookeeper  /opt/zookeeper  /var/log/zookeeper
 
-![Скриншот 14](zoo_cfg.png)
+![Скриншот 14](tar_gz.png)
 
 Команды:
 - touch /opt/zookeeper/conf/zoo.cfg
