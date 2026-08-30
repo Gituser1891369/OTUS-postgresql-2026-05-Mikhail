@@ -58,7 +58,7 @@ https://mobaxterm.mobatek.net/download.html
 ![Скриншот 7](moba.png)
 
 
-#7.Подготовка SSH ключа и проброс:
+#7. Подготовка SSH ключа и проброс:
 
 - Команды:
 -ssh-keygen
