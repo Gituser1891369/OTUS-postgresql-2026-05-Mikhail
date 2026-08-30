@@ -13,7 +13,7 @@ https://www.virtualbox.org/wiki/Downloads
 
 #2. Создаём виртуальные машины:
 
-![Скриншот 2] (virtualbox_hosts.png)
+![Скриншот 2](virtualbox_hosts.png)
 
 #3.Скачаваем дистрибутив Ubuntu
 
