@@ -182,7 +182,7 @@ sudo systemctl enable zookeeper.service
 sudo systemctl start zookeeper.service
 sudo systemctl status zookeeper
 
-![Скриншот 18](start_status_service.png)
+![Скриншот 18](zoo_cfg.png)
 
 # 6. Проверка статуса кластера и количество серверов в кластере:
 
@@ -192,14 +192,15 @@ sudo systemctl status zookeeper
 Проверка запросом-командой
 - for h in 192.168.0.110 192.168.0.102 192.168.0.112; do echo -n "$h: "; echo stat | nc $h 2181 2>/dev/null | grep Mode || echo "unreachable"; done
 
-![Скриншот 19](check cluster_server.png)
+![Скриншот 19](check_cluster_server.png)
 
 
 # 7. Проверка переключения
 
 - Команды
+systemctl restart zookeeper.service  (На текущем лидере)
+Видим переключение лидера в кластере.
+![Скриншот 20](old_leader.png)
 
-![Скриншот 1](Init_test_db.png)
-
-
+![Скриншот 21](new_leader.png)
 
