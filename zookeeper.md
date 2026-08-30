@@ -1,21 +1,21 @@
 # Подготовительные работы по разворавичиванию кластера zookeeper
 
-##За основу взял платформу virtualbox
+## За основу взял платформу virtualbox
 
-###Порядок действий:
+### Порядок действий:
 
-#1. Скачиваем и устанавливаем VurtualBox
+# 1. Скачиваем и устанавливаем VurtualBox
 - Ресурс:
 https://www.virtualbox.org/wiki/Downloads
 
 ![Скриншот 1](virtualbox.jpg)
 
 
-#2. Создаём виртуальные машины:
+# 2. Создаём виртуальные машины:
 
 ![Скриншот 2](virtualbox_hosts.png)
 
-#3.Скачаваем дистрибутив Ubuntu
+# 3.Скачаваем дистрибутив Ubuntu
 
 - Ресурс:
 https://ubuntu.com/download/server
@@ -23,7 +23,7 @@ https://ubuntu.com/download/server
 ![Скриншот 3](Ubuntu.png)
 
 
-#4. Подготовительные настройки перед работами.
+# 4. Подготовительные настройки перед работами.
 
 Настройка сети:
 В файле /etc/netplanКонфигурим ямл файл.
@@ -34,7 +34,7 @@ https://ubuntu.com/download/server
 
 ![Скриншот 4](static_address.png)
 
-#5. Обновление и установка дополнительного ПО.
+# 5. Обновление и установка дополнительного ПО.
 
 - Команды:
 -sudo apt update
@@ -46,7 +46,7 @@ https://ubuntu.com/download/server
 
 ![Скриншот 5](ssh.jpg)
 
-#6. Скачиваем и устанавливаем внешнего клиента для удобства работы Moba Extern (Или любой дрйгоу клиент по желанию)
+# 6. Скачиваем и устанавливаем внешнего клиента для удобства работы Moba Extern (Или любой дрйгоу клиент по желанию)
 
 -Ресурсы
 https://mobaxterm.mobatek.net/download.html
@@ -58,7 +58,7 @@ https://mobaxterm.mobatek.net/download.html
 ![Скриншот 7](moba.png)
 
 
-#7. Подготовка SSH ключа и проброс:
+# 7. Подготовка SSH ключа и проброс:
 
 - Команды:
 -ssh-keygen
@@ -71,7 +71,7 @@ https://mobaxterm.mobatek.net/download.html
 
 ### Установка Zookeeper
 
-#1. Установка необходимых компонентов и пакетов
+# 1. Установка необходимых компонентов и пакетов
 -Ресурсы:
 https://zookeeper.apache.org/releases
 
@@ -106,7 +106,7 @@ java_version.png
 ![Скриншот 13](java_version.png)
 
 
-#2. Необходимые права и каталоги
+# 2. Необходимые права и каталоги
 
 /opt/zookeeper  /var/log/zookeeper  /opt/zookeeper/data
 
@@ -125,7 +125,7 @@ zoo.cfg
 ![Скриншот 14](touch_zoo_cfg.png)
 
 
-#3. Настройка конфигов
+# 3. Настройка конфигов
 - Команды
 В созданный файл конфига добавляем параметры ниже
 vi /opt/zookeeper/conf/zoo.cfg
@@ -167,13 +167,13 @@ dataLogDir — путь, по которому zookeeper будет хранит
 
 
 
-#4. Настройка сервисов
+# 4. Настройка сервисов
 - Команды
 -vi /usr/lib/systemd/system/zookeeper.service
 
 ![Скриншот 17](zoo_service.png)
 
-#5. Запускаем сервис и проверяем статус
+# 5. Запускаем сервис и проверяем статус
 
 - Команды
 sudo systemctl daemon-reload
@@ -184,7 +184,7 @@ sudo systemctl status zookeeper
 
 ![Скриншот 18](start_status_service.png)
 
-#6. Проверка статуса кластера и количество серверов в кластере:
+# 6. Проверка статуса кластера и количество серверов в кластере:
 
 Статус сервера в кластере проверка через команду:
 -/opt/zookeeper/bin/zkServer.sh status
@@ -195,7 +195,7 @@ sudo systemctl status zookeeper
 ![Скриншот 19](check cluster_server.png)
 
 
-#7. Проверка переключения
+# 7. Проверка переключения
 
 - Команды
 
