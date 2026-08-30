@@ -119,7 +119,7 @@ apache-zookeeper-3.9.5-bin.tar.gz
 - touch /opt/zookeeper/conf/zoo.cfg
 - useradd -r c 'zookeeper service' zookeeper
 
-![Скриншот 14](touch_zoo_cfg.png)
+![Скриншот 15](touch_zoo_cfg.png)
 
 
 # 3. Настройка конфигов
