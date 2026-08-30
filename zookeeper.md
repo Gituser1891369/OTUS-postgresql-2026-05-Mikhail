@@ -101,7 +101,7 @@ sudo apt install default-jre certificates netcat-openbsd
 -Команды 
 -java --version
 
-java_version.png
+
 
 ![Скриншот 13](java_version.png)
 
