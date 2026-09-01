@@ -1,4 +1,4 @@
-<img width="898" height="66" alt="image" src="https://github.com/user-attachments/assets/dfe9ffaa-b3e8-47e2-8836-c00254c5a3fa" /># Порядок работ по разворавичиванию кластера zookeeper
+### Порядок работ по разорачиванию кластера ZooKeeper
 
 ## За основу взял платформу virtualbox
 
