@@ -30,25 +30,25 @@ https://ubuntu.com/download/server
 
 - Команды:
 - sudo vi /etc/netplan/50-cloud-init.yaml
--Прописываем параметры и применяем план по команде netplan apply
+- Прописываем параметры и применяем план по команде netplan apply
 
 ![Скриншот 4](static_address.png)
 
 # 5. Обновление и установка дополнительного ПО.
 
 - Команды:
--sudo apt update
--sudo apt upgrade
--sudo apt install openssh-server -y
--sudo systemctl start ssh.service
--sudo systemctl enable ssh.service
--sudo systemctl status ssh.service
+- sudo apt update
+- sudo apt upgrade
+- sudo apt install openssh-server -y
+- sudo systemctl start ssh.service
+- sudo systemctl enable ssh.service
+- sudo systemctl status ssh.service
 
 ![Скриншот 5](ssh.jpg)
 
 # 6. Скачиваем и устанавливаем внешнего клиента для удобства работы Moba Extern (Или любой дрйгоу клиент по желанию)
 
--Ресурсы
+- Ресурсы
 https://mobaxterm.mobatek.net/download.html
 
 ![Скриншот 6](moba_download.png)
@@ -61,10 +61,10 @@ https://mobaxterm.mobatek.net/download.html
 # 7. Подготовка SSH ключа и проброс:
 
 - Команды:
--ssh-keygen
--C:\Users\AMAYA/.ssh/id_ed25519
+- ssh-keygen
+- C:\Users\AMAYA/.ssh/id_ed25519
 Пробрасваем ключ через Power Shell
--type C:\Users\AMAYA\.ssh\id_rsa.pub | ssh admin@192.168.0.104 "cat >> ~/.ssh/authorized_keys"
+- type C:\Users\AMAYA\.ssh\id_rsa.pub | ssh admin@192.168.0.104 "cat >> ~/.ssh/authorized_keys"
 ![Скриншот 8](ssh.jpg)
 
 # 8. Подготовка и разметка дисков для базы данных.
