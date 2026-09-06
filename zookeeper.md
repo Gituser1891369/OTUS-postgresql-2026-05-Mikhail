@@ -189,7 +189,7 @@ dataLogDir — путь, по которому zookeeper будет хранит
 Проверка запросом-командой
 - for h in 192.168.0.110 192.168.0.102 192.168.0.112; do echo -n "$h: "; echo stat | nc $h 2181 2>/dev/null | grep Mode || echo "unreachable"; done
 
-![Скриншот 19](check_cluster_server.png)
+![Скриншот 19](check_cluster.png)
 
 
 # 7. Проверка переключения
@@ -201,6 +201,25 @@ dataLogDir — путь, по которому zookeeper будет хранит
 
 ![Скриншот 21](new_leader.png)
 
-# 8. Команды проверки кластера и утилиты:
+# 8. Команды проверки кластера:
+
+- Проверка работы кластера
+- Команда	                    Описание
+- echo stat | nc localhost 2181	Показать статистику сервера
+- echo srvr | nc localhost 2181	Показать информацию о сервере
+- echo conf | nc localhost 2181	Показать конфигурацию сервера
+- echo ruok | nc localhost 2181	Проверить, работает ли сервер (imok)
+
+- Полезные команды для диагностики
+- Команда                                	-Описание
+- sudo journalctl -u zookeeper -n 100	Посмотреть последние 100 строк из лога
+- ps aux | grep java | grep zookeeper	Проверить, запущен ли процесс зукипера
+- netstat -tlnp | grep 2181	Проверить, слушает ли сервер порт 2181
+ 
+- Команда для получения leader-а zookeeper на сервере
+- echo stat | nc localhost 2181 | grep Mode
+- запрос-команда состав кластера
+- for h in 192.168.0.110 192.168.0.102 192.168.0.112; do echo -n "$h: "; echo stat | nc $h 2181 2>/dev/null | grep Mode || echo "unreachable"; done
+
 
 
