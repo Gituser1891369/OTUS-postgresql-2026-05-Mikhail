@@ -1,21 +1,21 @@
-###Подготовка серверов
+### Подготовка серверов
 
-##За основу взял платформу virtualbox
+## За основу взял платформу virtualbox
 
-###Порядок действий:
+### Порядок действий:
 
-#1. Скачиваем и устанавливаем VurtualBox
+# 1. Скачиваем и устанавливаем VurtualBox
 - Ресурс:
 https://www.virtualbox.org/wiki/Downloads
 
 ![Скриншот 1](virtualbox.jpg)
 
 
-#2. Создаём виртуальные машины:
+# 2. Создаём виртуальные машины:
 
 ![Скриншот 2] (virtualbox_hosts.png)
 
-#3.Скачаваем дистрибутив Ubuntu
+# 3.Скачаваем дистрибутив Ubuntu
 
 - Ресурс:
 https://ubuntu.com/download/server
@@ -23,7 +23,7 @@ https://ubuntu.com/download/server
 ![Скриншот 3](Ubuntu.png)
 
 
-#4. Подготовительные настройки перед работами.
+# 4. Подготовительные настройки перед работами.
 
 Настройка сети:
 В файле /etc/netplan Конфигурим ямл файл.
@@ -34,7 +34,7 @@ https://ubuntu.com/download/server
 
 ![Скриншот 4](static_address.png)
 
-#5. Обновление и установка дополнительного ПО.
+# 5. Обновление и установка дополнительного ПО.
 
 - Команды:
 -sudo apt update
@@ -46,7 +46,7 @@ https://ubuntu.com/download/server
 
 ![Скриншот 5](ssh.jpg)
 
-#6. Скачиваем и устанавливаем внешнего клиента для удобства работы Moba Extern (Или любой дрйгоу клиент по желанию)
+# 6. Скачиваем и устанавливаем внешнего клиента для удобства работы Moba Extern (Или любой дрйгоу клиент по желанию)
 
 -Ресурсы
 https://mobaxterm.mobatek.net/download.html
@@ -58,7 +58,7 @@ https://mobaxterm.mobatek.net/download.html
 ![Скриншот 7](moba.png)
 
 
-#7. Подготовка SSH ключа и проброс:
+# 7. Подготовка SSH ключа и проброс:
 
 - Команды:
 -ssh-keygen
@@ -67,7 +67,7 @@ https://mobaxterm.mobatek.net/download.html
 -type C:\Users\AMAYA\.ssh\id_rsa.pub | ssh admin@192.168.0.104 "cat >> ~/.ssh/authorized_keys"
 ![Скриншот 8](ssh.jpg)
 
-#8. Подготовка и разметка дисков для базы данных.
+# 8. Подготовка и разметка дисков для базы данных.
 
 - Команды
 - vgcreate vg_data /dev/sde 
