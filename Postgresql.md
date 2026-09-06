@@ -22,8 +22,15 @@ https://ubuntu.com/download/server
 
 ![Скриншот 3](Ubuntu.png)
 
+# 4. Устанавливаем ОС проверяем после установки:
 
-# 4. Подготовительные настройки перед работами.
+- Команды
+- cat /etc/os-release
+
+![Скриншот 4](os_ubuntu.png)
+
+
+# 5. Подготовительные настройки перед работами.
 
 Настройка сети:
 В файле /etc/netplan Конфигурим ямл файл.
@@ -32,9 +39,9 @@ https://ubuntu.com/download/server
 - sudo vi /etc/netplan/50-cloud-init.yaml
 - Прописываем параметры и применяем план по команде netplan apply
 
-![Скриншот 4](static_address.png)
+![Скриншот 5](static_address.png)
 
-# 5. Обновление и установка дополнительного ПО.
+# 6. Обновление и установка дополнительного ПО.
 
 - Команды:
 - sudo apt update
@@ -44,30 +51,30 @@ https://ubuntu.com/download/server
 - sudo systemctl enable ssh.service
 - sudo systemctl status ssh.service
 
-![Скриншот 5](ssh.jpg)
+![Скриншот 6](ssh.jpg)
 
-# 6. Скачиваем и устанавливаем внешнего клиента для удобства работы Moba Extern (Или любой дрйгоу клиент по желанию)
+# 7. Скачиваем и устанавливаем внешнего клиента для удобства работы Moba Extern (Или любой дрйгоу клиент по желанию)
 
 - Ресурсы
 https://mobaxterm.mobatek.net/download.html
 
-![Скриншот 6](moba_download.png)
+![Скриншот 7](moba_download.png)
 
 Инсталиируем или запускаем портейбл версию.
 
-![Скриншот 7](moba.png)
+![Скриншот 8](moba.png)
 
 
-# 7. Подготовка SSH ключа и проброс:
+# 8. Подготовка SSH ключа и проброс:
 
 - Команды:
 - ssh-keygen
 - C:\Users\AMAYA/.ssh/id_ed25519
 Пробрасваем ключ через Power Shell
 - type C:\Users\AMAYA\.ssh\id_rsa.pub | ssh admin@192.168.0.104 "cat >> ~/.ssh/authorized_keys"
-![Скриншот 8](ssh.jpg)
+![Скриншот 9](ssh.jpg)
 
-# 8. Подготовка и разметка дисков для базы данных.
+# 9. Подготовка и разметка дисков для базы данных.
 
 - Команды
 - vgcreate vg_data /dev/sde 
@@ -77,7 +84,7 @@ https://mobaxterm.mobatek.net/download.html
 - mkdir /data
 - mount /data
 
-![Скриншот 8](ADD_HDD.png)
+![Скриншот 10](ADD_HDD.png)
 
 ### Установка PostgreSQL
 
@@ -91,23 +98,23 @@ https://mobaxterm.mobatek.net/download.html
 - sudo chmod 700 /data/18/ 
 
 
-![Скриншот 9](init.png)
+![Скриншот 11](init.png)
 
 
 # 2. Идём в каталог для предварительной настройки основного конфигурационного файла postgresql.conf
 
-![Скриншот 10](files_data.png)
+![Скриншот 12](files_data.png)
 
 
 # 3. Предварительная настройка postgresql.conf
 
-![Скриншот 10](lister_port.png)
+![Скриншот 13](lister_port.png)
 
-![Скриншот 11](pred_nastrojki.png)
+![Скриншот 14](pred_nastrojki.png)
 
-![Скриншот 12](pred_nastrojki.png)
+![Скриншот 15](pred_nastrojki.png)
 
-![Скриншот 13](pred_nastrojki_2.png)
+![Скриншот 16](pred_nastrojki_2.png)
 
 
 # 3. Создаём сервис
@@ -161,7 +168,7 @@ https://mobaxterm.mobatek.net/download.html
 
 # 4. Запускаем сервис 
 
-![Скриншот 14](service_status.png)
+![Скриншот 17](service_status.png)
 
 
 
