@@ -189,7 +189,7 @@ dataLogDir — путь, по которому zookeeper будет хранит
 Проверка запросом-командой
 - for h in 192.168.0.110 192.168.0.102 192.168.0.112; do echo -n "$h: "; echo stat | nc $h 2181 2>/dev/null | grep Mode || echo "unreachable"; done
 
-![Скриншот 19](check_cluster_server.png)
+![Скриншот 19](check_cluster.png)
 
 
 # 7. Проверка переключения
