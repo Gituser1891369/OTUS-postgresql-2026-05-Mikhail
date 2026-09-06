@@ -15,7 +15,7 @@ https://www.virtualbox.org/wiki/Downloads
 
 ![Скриншот 2](virtualbox_hosts.png)
 
-# 3.Скачаваем дистрибутив Ubuntu
+# 3. Скачиваем дистрибутив Ubuntu
 
 - Ресурс:
 https://ubuntu.com/download/server
